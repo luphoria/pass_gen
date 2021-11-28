@@ -35,9 +35,13 @@ let newPassword;
 if (chooseAction === "g") {
   let satisfied = false;
   let expectedStrength = 450;
-  let alphabet = prompt("Enter an alphabet or leave blank for default (ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+`~;:[{]}\\|'\",<.>/? ): ")
-  if(alphabet == "") alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+`~;:[{]}\\|'\",<.>/? "
-  alphabet = alphabet.split("")
+  let alphabet = prompt(
+    "Enter an alphabet or leave blank for default (ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+`~;:[{]}\\|'\",<.>/? ): "
+  );
+  if (alphabet == "")
+    alphabet =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+`~;:[{]}\\|'\",<.>/? ";
+  alphabet = alphabet.split("");
 
   while (!satisfied) {
     let length = prompt(
@@ -150,8 +154,9 @@ if (savePass.toLowerCase() === "y") {
     "what service is this password gonna be tied to?: "
   ).toUpperCase();
   if (passwords[passwordName]) {
+    console.log("that password already exists!");
     confirmation = prompt(
-      "that password already exists!\nwould you like to overwrite the existing password? (y/n): "
+      "would you like to overwrite the existing password? (y/n): "
     );
     if (confirmation != "y") {
       console.log("assuming that's a no!");
