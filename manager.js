@@ -2,6 +2,14 @@ const prompt = require("prompt-sync")();
 const entropy = require("tai-password-strength");
 const file = require("fs");
 
+const objAlpha = (obj) => {
+  let ordered = {};
+ Object.keys(obj).sort().forEach((key) => {
+   ordered[key] = obj[key];
+ });
+return ordered;
+}
+
 try {
   file.readFileSync("passwords.json");
 } catch {
@@ -9,7 +17,8 @@ try {
   file.writeFileSync("passwords.json", "{}");
 }
 
-let passwords = JSON.parse(file.readFileSync("passwords.json"));
+let passwords = objAlpha(JSON.parse(file.readFileSync("passwords.json")));
+
 let chooseAction = "";
 
 while (
