@@ -9,8 +9,11 @@ npm i
 ```
 ## Usage
 To run the program, (while in the project's root directory), run the command `node manager`.
+
 You should be greeted with a prompt. Simply follow the instructions it gives you.
+
 All of your user data is in `passwords.json`. This should go without saying, but don't share this with anyone.
 ### Credits
 luphoria - wrote everything
+
 `tai-password-strength` - https://www.npmjs.com/package/tai-password-strength
