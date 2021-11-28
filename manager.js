@@ -35,10 +35,9 @@ let newPassword;
 if (chooseAction === "g") {
   let satisfied = false;
   let expectedStrength = 450;
-  let alphabet =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+`~;:[{]}\\|'\",<.>/? ".split(
-      ""
-    );
+  let alphabet = prompt("Enter an alphabet or leave blank for default (ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+`~;:[{]}\\|'\",<.>/? ): ")
+  if(alphabet == "") alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=_+`~;:[{]}\\|'\",<.>/? "
+  alphabet = alphabet.split("")
 
   while (!satisfied) {
     let length = prompt(
