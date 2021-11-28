@@ -14,7 +14,7 @@ You should be greeted with a prompt. Simply follow the instructions it gives you
 
 All of your user data is in `passwords.json`. This should go without saying, but don't share this with anyone.
 
-All password entries are automatically forced to ALL-UPPERCASE. All inputs from the user will automatically be treated according to what the code wants -- in other words, it's cASe iNsENsiTiVE!
+All password entries are automatically forced to ALL-UPPERCASE. All inputs from the user will automatically be treated according to what the code wants (except the password itself) -- in other words, it's cASe iNsENsiTiVE!
 ### Credits
 luphoria - wrote everything
 
