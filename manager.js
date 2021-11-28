@@ -73,9 +73,10 @@ if (chooseAction === "g") {
       );
       satisfied = true;
     } else {
-      let tryAgain = prompt(
-        `\n\nthis password does not meet the strength expectation of ${expectedStrength}. instead it is ${strength}.\nwould you like to generate another? (y/n): `
+      console.log(
+        `\n\nthis password does not meet the strength expectation of ${expectedStrength}. instead it is ${strength}.\n`
       );
+      let tryAgain = prompt("would you like to generate another? (y/n): ");
       if (tryAgain.toLowerCase() == "y")
         console.log("okay, generating another!\n");
       else if (tryAgain.toLowerCase() == "n") {
@@ -120,8 +121,9 @@ if (chooseAction === "g") {
   while (!satisfied) {
     console.log("current saved passwords:\n");
     Object.keys(passwords).forEach((p) => console.log(p));
+    console.log("\n");
     let showPass = prompt(
-      "\nwhich of these passwords would you like to view?: "
+      "which of these passwords would you like to view?: "
     ).toUpperCase();
     if (passwords[showPass]) {
       console.log("ok!");
@@ -144,8 +146,9 @@ let savePass = prompt("would you like to save this password? (y/n): ");
 if (savePass.toLowerCase() === "y") {
   console.log("current saved passwords:\n");
   Object.keys(passwords).forEach((p) => console.log(p));
+  console.log("\n");
   let passwordName = prompt(
-    "\nwhat service is this password gonna be tied to?: "
+    "what service is this password gonna be tied to?: "
   ).toUpperCase();
   if (passwords[passwordName]) {
     confirmation = prompt(
