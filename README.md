@@ -1,7 +1,7 @@
 # pass_gen
 A simple offline CLI password manager written in node.js.
 ## Installation
-pass_gen is not a plugin or extension, though rather simply a manager for a plain-text .json file. Due to this, installation is very simple:
+pass_gen is not a plugin or extension, though rather simply a manager for a XOR-encoded .json file. Due to this, installation is very simple:
 ```
 git clone https://github.com/luphoria/pass_gen
 cd pass_gen
