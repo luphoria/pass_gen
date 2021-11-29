@@ -110,14 +110,14 @@ const _ = require("underscore");
 
 console.log("Looking for legacy (plaintext-password) JSON file in ./passwords.json...")
 try {
-    file.readFileSync("passwords.json");
+    file.readFileSync("../passwords.json");
 } catch {
     console.error("Could not find/read passwords.json!\nQuitting...")
     process.exit(1)
 }
 console.log("OK")
 
-let passwords = JSON.parse(file.readFileSync("passwords.json"));
+let passwords = JSON.parse(file.readFileSync("../passwords.json"));
 console.log("What should your master password be?\nWARNING: this password will NOT be indexed in the password manager! You MUST remember this yourself!")
 let XORKey    = prompt("Enter master password (XOR key): ")
 console.log("XOR Key: " + XORKey)
@@ -134,5 +134,5 @@ Object.keys(passwords).forEach((p) => {
 
 console.log("\n\nDONE!")
 console.log("writing over passwords.json...")
-file.writeFileSync("passwords.json", JSON.stringify(passwords));
+file.writeFileSync("../passwords.json", JSON.stringify(passwords));
 console.log("finished!\n\nWRITE THIS PASSWORD DOWN AS YOU NEED IT TO VIEW PASSWORDS:\n" + XORKey)
