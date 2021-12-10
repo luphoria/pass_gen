@@ -20,9 +20,17 @@
         input {
             width: 100%
         }
-        #out {
+        #dout {
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+            background-color: black
+        }
+        #eout {
             font-family: 'Courier New', Courier, monospace;
             color: red
+        }
+        ::selection {
+            background: white
         }
     </style>
     <script>
@@ -121,11 +129,22 @@
         It is always preferable that you use manager.js over this simple tool, however this works in a pinch. Feel free to pop this .html on a USB.</p>
         <br/>
         <input id="encryptedPwd" placeholder="Encrypted password..." type="text"/><br />
-        <input id="XORkey" placeholder="XOR key..." type="text"/><br /><br/>
-        <button onclick="document.getElementById('out').innerText = XORCipher.decode(document.getElementById('XORkey').value,document.getElementById('encryptedPwd').value)">Decrypt</button><br/>
-        <h2>Decrypted password will display below</h2>
+        <input id="XORkeyDecrypt" placeholder="XOR key..." type="text"/><br/><br/>
+        <button onclick="document.getElementById('dout').innerText = XORCipher.decode(document.getElementById('XORkeyDecrypt').value,document.getElementById('encryptedPwd').value)">Decrypt</button><br/>
+        <h2>Decrypted password will display below -- the text will be censored, but it contains the password.</h2>
     </div>
-    <div id="out"></div>
+    <div id="dout"></div>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <div>
+        <h2>XOR encoder</h2>    
+        <p>There isn't much logical purpose for this to be here, but the functionality was already supported and just had no GUI -- so, why not?</p>
+        <br/>
+        <input id="decryptedText" placeholder="Raw text..." type="text"/><br/>
+        <input id="XORkeyEncrypt" placeholder="XOR key..." type="text"/><br/><br/>
+        <button onclick="document.getElementById('eout').innerText = XORCipher.encode(document.getElementById('XORkeyEncrypt').value,document.getElementById('decryptedText').value)">Encrypt</button>
+        <h2>Encrypted text below.</h2>
+    </div>
+    <div id="eout"></div>
 </body>
 
 </html>
